@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Profile;
 public class LocalConfig {
 
 
-
     @Bean
     public void startBD() {
 

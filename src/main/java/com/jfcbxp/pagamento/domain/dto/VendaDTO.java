@@ -1,6 +1,5 @@
 package com.jfcbxp.pagamento.domain.dto;
 
-import com.jfcbxp.pagamento.domain.ProdutoVenda;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -26,5 +25,5 @@ public class VendaDTO extends RepresentationModel<VendaDTO> implements Serializa
     private Integer id;
     private Date emissao;
     private BigDecimal valorTotal;
-    private List<ProdutoVenda> produtos;
+    private List<ProdutoVendaDTO> produtos;
 }

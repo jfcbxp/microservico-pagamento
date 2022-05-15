@@ -32,6 +32,6 @@ public class Venda {
     @DateTimeFormat(pattern = "MM/dd/yyy")
     private Date emissao;
     private BigDecimal valorTotal;
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "venda",cascade = {CascadeType.REFRESH})
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "venda", cascade = {CascadeType.REFRESH})
     private List<ProdutoVenda> produtos;
 }
