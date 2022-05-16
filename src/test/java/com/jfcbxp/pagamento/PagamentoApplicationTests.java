@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class PagamentoApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void main() {
+		PagamentoApplication.main(new String[] {});
 	}
 
 }
