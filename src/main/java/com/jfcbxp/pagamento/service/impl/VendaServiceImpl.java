@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class VendaServiceImpl implements VendaService {
@@ -32,7 +33,11 @@ public class VendaServiceImpl implements VendaService {
     @Override
     public Venda createVenda(VendaDTO vendaDTO) {
         Venda venda = repository.save(mapper.map(vendaDTO, Venda.class));
-        List<ProdutoVenda> produtosSalvos = List.of((ProdutoVenda) vendaDTO.getProdutos().stream().map(p -> mapper.map(p, ProdutoVenda.class)));
+        List<ProdutoVenda> produtosSalvos = venda.getProdutos().stream().map(p -> {
+                    p.setVenda(venda);
+                    return p;
+                }
+        ).collect(Collectors.toList());
         produtoVendaRepository.saveAll(produtosSalvos);
         venda.setProdutos(produtosSalvos);
         return venda;

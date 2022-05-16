@@ -1,6 +1,5 @@
 package com.jfcbxp.pagamento.domain.dto;
 
-import com.jfcbxp.pagamento.domain.Venda;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,5 +23,4 @@ public class ProdutoVendaDTO extends RepresentationModel<ProdutoVendaDTO> implem
     private Integer id;
     private Integer idProduto;
     private BigDecimal quantidade;
-    private Venda venda;
 }
