@@ -29,7 +29,7 @@ public class Venda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @DateTimeFormat(pattern = "MM/dd/yyy")
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
     private Date emissao;
     private BigDecimal valorTotal;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "venda", cascade = {CascadeType.REFRESH})
