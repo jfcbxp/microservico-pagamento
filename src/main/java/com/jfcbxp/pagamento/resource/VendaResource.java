@@ -34,7 +34,6 @@ public class VendaResource {
     public static final String APPLICATION_X_YAML = "application/x-yaml";
     @Autowired
     private ModelMapper mapper;
-
     @Autowired
     private VendaService service;
     @Autowired
@@ -54,7 +53,7 @@ public class VendaResource {
 
         var sortDirection = "desc".equalsIgnoreCase(direction) ? Sort.Direction.DESC : Sort.Direction.ASC;
 
-        Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, "name"));
+        Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, "emissao"));
         Page<VendaDTO> vendas = service.findAllVenda(pageable).map(p -> mapper.map(p, VendaDTO.class));
 
         vendas.stream()
