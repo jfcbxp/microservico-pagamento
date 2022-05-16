@@ -6,9 +6,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class PagamentoApplicationTests {
 
-	@Test
-	void main() {
-		PagamentoApplication.main(new String[] {});
-	}
+    @Test
+    void main() {
+        PagamentoApplication.main(new String[]{});
+    }
 
 }
